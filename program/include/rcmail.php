@@ -616,6 +616,10 @@ class rcmail extends rcube
 
         if ($this->user && $this->user->ID) {
             $this->output->set_env('user_id', $this->user->get_hash());
+            $user_prefs = $this->user->get_prefs();
+            if (isset($user_prefs['color_mode']) && ($user_prefs['color_mode'] == 'dark') || $user_prefs['color_mode'] == 'light') {
+                $this->output->set_env('color_mode', $user_prefs['color_mode']);
+            }
         }
 
         // set compose mode for all tasks (message compose step can be triggered from everywhere)
