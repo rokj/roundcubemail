@@ -40,6 +40,7 @@ class rcmail_action_utils_save_pref extends rcmail_action
             'list_cols',
             'collapsed_folders',
             'collapsed_abooks',
+            'color_mode',
         ];
 
         $whitelist_sess = [
